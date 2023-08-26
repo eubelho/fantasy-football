@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 
+require("dotenv").config()
+
 // mongoose.connect - to tell mongoose what database
 mongoose.connect(
-  "mongodb+srv://eubelho:yjYEmRGqhrUwE0Jm@sei.7nei3ex.mongodb.net/"
+  process.env.DATABASE_URL
 );
 
 // check for error or successful connection
