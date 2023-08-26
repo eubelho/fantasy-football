@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Add a New Substitute</title>
+
+<body>
+    <div class="players-new-headers">
+        <h1>Build Your Backup</h1>
+        <h2>Add a Substitute</h2>
+    </div>
+
+    <ul class="players-new-nav">
+      <li class="left"><a href="/players">Starting XI</a></li>
+      <li class="right"><a href="/logout">Logout</a></li>
+  </ul>
+
+  <main>
+    <div class="substitutes-new-input">
+      <form action="/substitutes" method="POST">
+
+        <label for="name"><b>Name:</b></label>
+        <input type="text" name="name" placeholder="Substitute Name">
+
+        <label for="position"><b>Position:</b></label>
+        <input type="text" name="position" placeholder="Substitute Position">
+
+        <label for="number"><b>Number:</b></label>
+        <input type="number" name="number" placeholder="Substitute Number">
+
+        <label for="team"><b>Team:</b></label>
+        <input type="text" name="team" placeholder="Substitute Team">
+
+        <label for="isRetired"><b>Retired:</b></label>
+        <input type="text" name="isRetired" placeholder="Retired?">
+
+        <label for="dateOfBirth"><b>Date of Birth:</b></label>
+        <input type="date" name="dateOfBirth" placeholder="Date of Birth">
+
+        <label for="country"><b>Country:</b></label>
+        <input type="text" name="country" placeholder="Substitute Country">
+
+        <label for="image"><b>Image:</b></label>
+        <input type="text" name="image" placeholder="Enter an Image Link">
+       
+        <div class="button-container">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+  </main>
+
+</body>
+
+</html>

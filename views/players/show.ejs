@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Players Details</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="players-show-headers">
+        <h1>Players Profiles</h1>
+        <h2><%= players.name %></h2>
+    </div>
+
+    <ul class="players-show-nav">
+        <li class="left"><a href="/players">Home </a></li>
+        <li class="left"><a href="/substitutes">Substitutes</a></li>
+        <li class="right"><a href="/logout">Logout</a></li>
+    </ul>
+
+    <div class="players-show-images">
+        <% const imageUrl = players.image.startsWith("http") ? new URL(players.image).pathname : players.image; %>
+        <% if (players.image.startsWith("http")) { %>
+            <img src="<%= players.image %>" alt="Player Image" class="players-img">
+        <% } else { %>
+            <img src="/<%= players.image %>" alt="Player Image" class="players-img">
+        <% } %>
+    </div>
+    
+    
+
+    <div class="show-players-details">
+        <p><b>Name:</b> <%= players.name %></p>
+        <p><b>Position:</b> <%= players.position %></p>
+        <p><b>Number:</b> <%= players.number %></p>
+        <p><b>Team:</b> <%= players.team %></p>
+        <p><b>Retired:</b> <%= players.isEquipment %></p>
+        <p><b>Date of Birth:</b> <%= players.dateOfBirth %></p>
+        <p><b>Country:</b> <%= players.country %></p>
+
+
+            <button onclick="window.location.href='/players/<%= players.id %>/edit'">
+                Edit Player
+            </button>
+        
+            <form action="/players/<%= players.id %>?_method=DELETE" method="POST">
+                <button type="submit">
+                    Delete Player: <%= players.name %>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>

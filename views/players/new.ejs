@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Add a New Player</title>
+
+<body>
+    <div class="players-new-headers">
+        <h1>Better Your Team</h1>
+        <h2>Add a New Player</h2>
+    </div>
+
+    <ul class="players-new-nav">
+      <li class="left"><a href="/players">Starting XI</a></li>
+      <li class="right"><a href="/logout">Logout</a></li>
+  </ul>
+
+  <main>
+    <div class="players-new-input">
+      <form action="/players" method="POST">
+
+        <label for="name"><b>Name:</b></label>
+        <input type="text" name="name" placeholder="Player Name">
+
+        <label for="position"><b>Position:</b></label>
+        <input type="text" name="position" placeholder="Player Position">
+
+        <label for="number"><b>Number:</b></label>
+        <input type="number" name="number" placeholder="Player Number">
+
+        <label for="team"><b>Team:</b></label>
+        <input type="text" name="team" placeholder="Player Team">
+
+        <label for="isRetired"><b>Retired:</b></label>
+        <input type="boolean" name="isRetired" placeholder="Retired?">
+
+        <label for="dateOfBirth"><b>Date of Birth:</b></label>
+        <input type="date" name="dateOfBirth" placeholder="Date of Birth">
+
+        <label for="country"><b>Country:</b></label>
+        <input type="text" name="country" placeholder="Player Country">
+
+        <label for="image"><b>Image:</b></label>
+        <input type="text" name="image" placeholder="Enter an Image Link">
+       
+        <div class="button-container">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+  </main>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Players Details</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="substitutes-show-headers">
+        <h1>Substitutes Profiles</h1>
+        <h2><%= Substitutes.name %></h2>
+    </div>
+
+    <ul class="substitutes-show-nav">
+        <li class="left"><a href="/players">Starting XI</a></li>
+        <li class="left"><a href="/substitutes">Substitutes</a></li>
+        <li class="right"><a href="/logout">Logout</a></li>
+    </ul>
+
+    <div class="substitutes-show-images">
+        <% const imageUrl = substitutes.image.startsWith("http") ? new URL(substitutes.image).pathname : substitutes.image; %>
+        <% if (substitutes.image.startsWith("http")) { %>
+            <img src="<%= substitutes.image %>" alt="substitutes Image" class="substitutes-img">
+        <% } else { %>
+            <img src="/<%= substitutes.image %>" alt="substitutes Image" class="substitutes-img">
+        <% } %>
+    </div>
+    
+    
+
+    <div class="show-substitutes-details">
+        <p><b>Name:</b> <%= substitutes.name %></p>
+        <p><b>Position:</b> <%= substitutes.position %></p>
+        <p><b>Number:</b> <%= substitutes.number %></p>
+        <p><b>Team:</b> <%= substitutes.team %></p>
+        <p><b>Retired:</b> <%= substitutes.isEquipment %></p>
+        <p><b>Date of Birth:</b> <%= substitutes.dateOfBirth %></p>
+        <p><b>Country:</b> <%= substitutes.country %></p>
+
+
+        <div class="show-substitutes-actions">
+            <a href="/substitutes/new/<%= substitutes.id %>">
+                <button id="<%= substitutes.id %>" class="addToStartingXI">Add to Starting XI</button>
+            </a>
+        
+            <button onclick="window.location.href='/substitutes/<%= substitutes.id %>/edit'">
+                Edit Substitute
+            </button>
+        
+            <form action="/substitutes/<%= substitutes.id %>?_method=DELETE" method="POST">
+                <button type="submit">
+                    Delete Substitute: <%= substitutes.name %>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>

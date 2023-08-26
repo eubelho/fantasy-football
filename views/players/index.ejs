@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Image Gallery</title>
+</head>
+
+<body>
+    <div class="players-index-headers">
+        <h1>Starting XI</h1>
+        <h2>Click Player Image for Information</h2>
+    </div>
+
+    <ul class="players-index-nav">
+        <li class="left"><a href="/players/new">Add New Player</a></li>
+        <li class="left"><a href="/substitutes">Substitutes</a></li>
+        <li class="right"><a href="/logout">Logout</a></li>
+    </ul>
+
+    <div class="players-index-images">
+        <% players.forEach(players => { %>
+          <div class="players-index-container">
+            <a href="/players/<%= players.id %>">
+                <img src="<%= players.image %>" alt="Image" class="player-index-img">
+            </a>
+            <p class="players-index-name"><%= players.name %></p>
+          </div>
+        <% }); %>
+      </div>
+
+  </body>
+
+</html>

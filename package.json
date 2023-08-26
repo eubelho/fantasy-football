@@ -1,0 +1,25 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "## Description A website that allows you to make a fantasy football team of your choosing. They will be displayed in a False-9 formation. Any additional players will be automatically added to the substitution page.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.3",
+    "init": "^0.1.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^7.4.3",
+    "morgan": "^1.10.0"
+  }
+}

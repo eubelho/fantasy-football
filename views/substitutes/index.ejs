@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Substitute Image Gallery</title>
+</head>
+
+<body>
+    <div class="substitutes-index-headers">
+        <h1>Bench</h1>
+        <h2>Click Substitute Image for Information</h2>
+    </div>
+
+    <ul class="substitutes-index-nav">
+        <li class="left"><a href="/substitutes/new">Add New Substitute</a></li>
+        <li class="left"><a href="/players">Starting XI</a></li>
+        <li class="right"><a href="/logout">Logout</a></li>
+    </ul>
+
+    <div class="substitutes-index-images">
+        <% substitutes.forEach(substitutes => { %>
+          <div class="substitutes-index-container">
+            <a href="/substitutes/<%= substitutes.id %>">
+                <img src="<%= substitutes.image %>" alt="Image" class="substitutes-index-img">
+            </a>
+            <p class="substitutes-index-name"><%= substitutes.name %></p>
+          </div>
+        <% }); %>
+      </div>
+
+  </body>
+
+</html>
